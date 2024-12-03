@@ -1,0 +1,22 @@
+# Ignore virtual environment
+venv/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore log files except sample log
+data/log-files/*.log
+!data/log-files/rc_35.log
+
+# Ignore all CSV files except sample data
+data/csv-output-files/*.csv
+!data/csv-output-files/rc_35.csv
+
+# Ignore Jupyter Notebook checkpoints
+*.ipynb_checkpoints
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+.DS_Store
