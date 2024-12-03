@@ -42,6 +42,12 @@ def parse_data(input_file):
     return dataframe
 
 
+def clean_df(data):
+    data.columns = _clean_header(data.columns)
+    data = data.dropna()
+    return data
+
+
 def _clean_header(header):
     cleaned_header = []
 
@@ -56,11 +62,6 @@ def _clean_header(header):
         cleaned_header.append(cleaned_column)
 
     return cleaned_header
-
-def clean_df(data):
-    data.columns = _clean_header(data.columns)
-    data = data.dropna()
-    return data
 
 
 def _log_to_df(header, data_rows):
