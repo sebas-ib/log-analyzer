@@ -37,6 +37,7 @@ def parse_data(input_file):
 
     # Apply transformation to the 3rd column
     dataframe.iloc[:, 2] = dataframe.iloc[:, 2].apply(_min_to_sec_format)
+    dataframe.rename(columns={'ElapsedTime|Min|0.0|0.0|10': 'ElapsedTime|Sec|0.0|0.0|10'}, inplace=True)
     dataframe = dataframe.apply(pd.to_numeric, errors='coerce')
 
     return dataframe
